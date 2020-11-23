@@ -132,7 +132,18 @@ export default function transform(
     }
 
     if (isNode) {
+      const isWrapped = node.type === 'CallExpression'
       const isArrowFunction = node.type === 'ArrowFunctionExpression'
+
+      if (isWrapped) {
+        const wrappedInit = (node as CallExpression)
+
+        wrappedInit.arguments.forEach((node, index) => {
+          fc2nc(node, (newNode) => {
+            wrappedInit.arguments[index] = newNode
+          })
+        })
+      }
 
       console.warn(isArrowFunction)
       if (isArrowFunction) {
