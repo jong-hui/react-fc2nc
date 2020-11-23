@@ -1,7 +1,7 @@
-export const MyComponent = () => {
+export const Test = Hoc(observer(() => {
   return (
     <div>
       myComponent
     </div>
   )
-}
+}))
