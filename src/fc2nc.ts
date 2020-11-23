@@ -63,36 +63,6 @@ export default function transform(
   const j = api.jscodeshift
   const AST = j(fileInfo.source)
   const moduleName = getModuleName(fileInfo.path)
-  console.warn(moduleName)
-
-  // AST.find(j.Identifier).forEach(p => {
-  //   if ((p.value.loc as any).identifierName === 'MyComponent') {
-  //     console.warn(
-  //       p.node
-  //     )
-      
-  //   }
-  // })
-
-  // function isArrowFunctionExpression(expression: Expression | null): boolean {
-  //   console.warn(expression)
-  //   if (!expression) {
-  //     return false
-  //   }
-
-  //   return (
-  //     expression.type === "ArrowFunctionExpression"
-  //   )
-  // }
-
-  // AST
-  // .findVariableDeclarators(moduleName)
-  // .filter(p => {
-  //   return isArrowFunctionExpression(p.node.init)
-  // })
-  // .forEach(p => {
-
-  // })
 
   function fc2nc(
     pathOrNode: ASTPath<VariableDeclarator> | Expression | null,
@@ -145,7 +115,6 @@ export default function transform(
         })
       }
 
-      console.warn(isArrowFunction)
       if (isArrowFunction) {
         const moduleInit = (node as FunctionExpression)
 
@@ -174,7 +143,7 @@ export default function transform(
 
   AST
     .findVariableDeclarators(moduleName)
-    .forEach(fc2nc)
+    .forEach((path) => fc2nc(path))
 
   return AST.toSource({
     useTabs: true,
