@@ -1,8 +1,7 @@
 {
   "name": "react-fc2nc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "CLI for react Function Component to Named Component",
   "bin": "cli.js",
   "scripts": {
     "cleanUpBeforeTest": "rm -rf ./__tests__/fixtures/some path",
