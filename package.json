@@ -1,18 +1,33 @@
 {
   "name": "react-fc2nc",
-  "version": "1.0.0",
-  "description": "CLI for react Function Component to Named Component",
+  "version": "0.0.1",
+  "description": "codemod CLI for react Function Component to Named Component",
   "bin": "cli.js",
   "scripts": {
     "cleanUpBeforeTest": "rm -rf \"./__tests__/fixtures/some path\"",
     "test": "npm run cleanUpBeforeTest && jest"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jong-hui/react-fc2nc"
+  },
+  "bugs": {
+    "url": "https://github.com/jong-hui/react-fc2nc/issues"
+  },
+  "files": [
+    "cli.js",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "codemod",
+    "Function Component to Named Component"
+  ],
+  "author": "jong-hui",
   "license": "ISC",
   "dependencies": {
-    "@babel/parser": "^7.12.7",
     "@types/jest": "^26.0.15",
-    "camelcase": "^6.2.0",
     "dedent-js": "^1.0.1",
     "jscodeshift": "^0.11.0"
   },
