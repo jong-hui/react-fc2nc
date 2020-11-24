@@ -9,7 +9,7 @@ spawn(
     ...process.argv.filter(arg => arg.startsWith("--")),
     "-t",
     "src/fc2nc.ts",
-    process.cwd()
+    process.argv[2]
   ],
   {
     cwd: __dirname,
