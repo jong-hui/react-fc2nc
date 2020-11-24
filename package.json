@@ -1,6 +1,6 @@
 {
   "name": "react-fc2nc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "codemod CLI for react Function Component to Named Component",
   "bin": "cli.js",
   "scripts": {
